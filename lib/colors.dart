@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  static final Color bgcolor= Color(0xFFFFFFFF);
+  static final Color appbarcolor=Color(0xFFF091E2);
   static final Color purple = Colors.purple;
   static final Color red = Colors.red;
   static final Color white = Colors.white;

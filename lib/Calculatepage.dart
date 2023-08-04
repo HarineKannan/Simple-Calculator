@@ -18,7 +18,9 @@ class Calculator extends State<StatefulWidget> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.calculate_outlined),
+          leading: Icon(Icons.calculate_outlined,
+            size: 30,
+          ),
           title: Text(
             "Harine's Calc",
             style: TextStyle(
@@ -28,10 +30,11 @@ class Calculator extends State<StatefulWidget> {
             ),
           ),
         ),
+
         body: ListView(
           children: [
             Container(
-              padding: EdgeInsets.only(top: 150.0, bottom: 70.0, right: 5.0),
+              padding: EdgeInsets.only(top: 200.0, bottom: 70, right: 5.0),
               child: Text(
                 _store,
                 style: TextStyle(fontSize: 30.0),
@@ -39,73 +42,76 @@ class Calculator extends State<StatefulWidget> {
               alignment: Alignment(1, 1),
             ),
             Container(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: FloatingActionButton(
-                      backgroundColor: AppColors.white,
-                      elevation: 15.0,
-                      child: Text(
-                        "+",
-                        style: TextStyle(
-                            fontSize: 30.0, color:AppColors.yellow),
+              child: Padding(
+                padding: const EdgeInsets.only(top:20.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: FloatingActionButton(
+                        backgroundColor: AppColors.white,
+                        elevation: 15.0,
+                        child: Text(
+                          "+",
+                          style: TextStyle(
+                              fontSize: 30.0, color:AppColors.yellow),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _store += '+';
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _store += '+';
-                        });
-                      },
                     ),
-                  ),
-                  Expanded(
-                    child: FloatingActionButton(
-                      backgroundColor: AppColors.white,
-                      elevation: 15.0,
-                      child: Text(
-                        "-",
-                        style: TextStyle(
-                            fontSize: 30.0, color: AppColors.yellow),
+                    Expanded(
+                      child: FloatingActionButton(
+                        backgroundColor: AppColors.white,
+                        elevation: 15.0,
+                        child: Text(
+                          "-",
+                          style: TextStyle(
+                              fontSize: 30.0, color: AppColors.yellow),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _store += '-';
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _store += '-';
-                        });
-                      },
                     ),
-                  ),
-                  Expanded(
-                    child: FloatingActionButton(
-                      backgroundColor: AppColors.white,
-                      elevation: 15.0,
-                      child: Text(
-                        "X",
-                        style: TextStyle(
-                            fontSize: 30.0, color: AppColors.yellow),
+                    Expanded(
+                      child: FloatingActionButton(
+                        backgroundColor: AppColors.white,
+                        elevation: 15.0,
+                        child: Text(
+                          "X",
+                          style: TextStyle(
+                              fontSize: 30.0, color: AppColors.yellow),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _store += '*';
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _store += '*';
-                        });
-                      },
                     ),
-                  ),
-                  Expanded(
-                    child: FloatingActionButton(
-                      backgroundColor: AppColors.white,
-                      elevation: 15.0,
-                      child: Text(
-                        "/",
-                        style: TextStyle(
-                            fontSize: 30.0, color: AppColors.yellow),
+                    Expanded(
+                      child: FloatingActionButton(
+                        backgroundColor: AppColors.white,
+                        elevation: 15.0,
+                        child: Text(
+                          "/",
+                          style: TextStyle(
+                              fontSize: 30.0, color: AppColors.yellow),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _store += '/';
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _store += '/';
-                        });
-                      },
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Container(
